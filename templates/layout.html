@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='site.css')}}"
+    />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+      <a href="{{ url_for('mealprep') }}" class="navbar-item">Meal Prep</a>
+      <a href="{{ url_for('groceryorder') }}" class="navbar-item"
+        >Grocery Order</a
+      >
+      <a href="{{ url_for('medicalorder') }}" class="navbar-item"
+        >Medical Order</a
+      >
+      <a href="{{ url_for('login') }}" class="navbar-item">Log In</a>
+      <a href="{{ url_for('signup') }}" class="navbar-item">Sign Up</a>
+    </div>
+
+    <div class="body-content">
+      {% block content %} {% endblock %}
+      <hr />
+      <footer>
+        <p>© 2018</p>
+      </footer>
+    </div>
+  </body>
+</html>
